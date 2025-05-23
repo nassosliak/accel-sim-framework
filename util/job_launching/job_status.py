@@ -186,6 +186,8 @@ def get_squeue_status(jobId, node_details):
 
 
 def isNumber(s):
+    if not s:
+        return False
     if s[-1] == "K" or s[-1] == "M" or s[-1] == "G" or s[-1] == "T":
         s = s[:-1]
     try:

@@ -234,6 +234,14 @@ def parse_run_simulations_options():
         default="rodinia_2.0-ft",
     )
     parser.add_option(
+        "-o",
+        "--use_optimal_phase_size",
+        dest="use_optimal_phase_size",
+        action="store_true",
+        default=False,
+        help="Use optimal phase sizes from optimal_phase_sizes.csv",
+    )
+    parser.add_option(
         "-C",
         "--configs_list",
         dest="configs_list",

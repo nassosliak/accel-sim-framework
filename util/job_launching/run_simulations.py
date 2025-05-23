@@ -34,7 +34,7 @@ from optparse import OptionParser
 import os
 import subprocess
 from subprocess import Popen, PIPE
-
+import csv
 import sys
 import re
 import shutil
@@ -285,6 +285,36 @@ class ConfigurationSpec:
             os.remove(all_data_link)
         if os.path.exists(os.path.join(this_directory, data_dir)):
             os.symlink(os.path.join(this_directory, data_dir), all_data_link)
+    def get_optimal_phase_size(self, bench_name, args):
+        """
+        Get optimal phase size from CSV file based on benchmark name and arguments
+        """
+        csv_path = os.path.join(this_directory, "optimal_phase_sizes.csv") 
+        if not os.path.exists(csv_path):
+            print(f"Warning: Could not find {csv_path}")
+            return None
+
+        # Start with clean args
+        args_key = args.strip()     
+        benchmark_key = f"{args_key}".replace("/", "-")
+
+        print(f"DEBUG: Generated key: {benchmark_key}")
+
+        try:
+            with open(csv_path, 'r') as f:
+                reader = csv.reader(f)
+                next(reader) # Skip header
+                for row in reader:
+                    csv_key = row[0].strip()
+                    print(f"DEBUG: Checking CSV row: [{csv_key}]")
+                    if csv_key == benchmark_key:
+                        phase_size = int(row[1].strip())
+                        print(f"DEBUG: Found match! Phase size = {phase_size}")
+                        return phase_size
+                print(f"DEBUG: No match found in CSV for {benchmark_key}")
+        except Exception as e:
+            print(f"ERROR: Failed reading CSV: {str(e)}")
+        return None
 
     # replaces all the "REAPLCE_*" strings in the .sim file
     def text_replace_torque_sim(
@@ -402,7 +432,17 @@ class ConfigurationSpec:
 
         config_text = open(config_text_file).read()
         config_text += "\n" + benchmark_spec_opts + "\n" + self.params + "\n"
-
+        config_text = re.sub(r'-gpgpu_phase_size \d+\n?', '', config_text)
+        # Add phase size configuration if enabled
+        print(f"DEBUG: use_optimal_phase_size = {options.use_optimal_phase_size}")
+        if options.use_optimal_phase_size:
+            phase_size = self.get_optimal_phase_size(bench_name, appargs_run_subdir)
+            if phase_size:
+                config_text += f"\n-gpgpu_phase_size {phase_size}\n"
+                print(f"DEBUG: Setting phase size to {phase_size} in config file")
+            else:
+                print("DEBUG: Using default phase size")
+        
         if options.accelwattch_HW:
             # if bench_name == "cutlass_perf_test":
             #     config_text += "\n" + "-hw_perf_bench_name " + appargs_run_subdir.replace('/','_') + "\n"

@@ -201,7 +201,6 @@ int measurePower(char* oFileName, int csv, int devId, nvmlDevice_t* dev, int sam
         }
 
 
-
 		if (temp_cutoff_T)
 		{
 			res = nvmlDeviceGetTemperature( *dev, NVML_TEMPERATURE_GPU, &temperature );
