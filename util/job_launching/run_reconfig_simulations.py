@@ -42,10 +42,11 @@ import glob
 import datetime
 import yaml
 import common
-
+per_benchmark_gpgpusim_config = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1/bfs-rodinia-3.1/__data_graph65536_txt_8_512/gpgpusim.config"
 this_directory = os.path.dirname(os.path.realpath(__file__)) + "/"
 # This function will pull the SO name out of the shared object,
 # which will have current GIT commit number attatched.
+
 def extract_version(exec_path, simulator):
     if simulator == "gpgpusim":
         regex_base = "gpgpu-sim_git-commit"
@@ -76,7 +77,7 @@ class ConfigurationSpec:
         name, params, config_file = nameTuple
         self.run_subdir = name
         self.params = params
-        self.config_file = config_file
+        self.config_file = '/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1/bfs-rodinia-3.1/__data_graph65536_txt_8_512/gpgpusim.config'
 
     def my_print(self):
         print("Run Subdir = " + self.run_subdir)
@@ -107,7 +108,13 @@ class ConfigurationSpec:
             for argmap in self.command_line_args_list:
                 args = argmap["args"]
                 self.benchmark_args_subdirs[args] = common.get_argfoldername(args)
-
+                print(f"DEBUG: args = {args}")
+                print(f"DEBUG: get_argfoldername(args) = {self.benchmark_args_subdirs[args]}")
+                bench_dir = benchmark.replace("/", "_")
+                config_base = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1"
+                print("DEBUG: Existing dirs:")
+                for d in os.listdir(os.path.join(config_base, bench_dir)):
+                    print("  ", d)
             for argmap in self.command_line_args_list:
                 args = argmap["args"]
                 mem_usage = argmap["accel-sim-mem"]
@@ -117,6 +124,8 @@ class ConfigurationSpec:
                 this_run_dir = os.path.join(
                     run_directory, appargs_run_subdir, self.run_subdir
                 )
+
+
                 self.setup_run_directory(
                     full_data_dir, this_run_dir, data_dir, appargs_run_subdir
                 )
@@ -236,7 +245,39 @@ class ConfigurationSpec:
             if os.path.isfile(new_file):
                 os.remove(new_file)
             shutil.copyfile(file_to_cp, new_file)
+        bench_dir = appargs_subdir.split(os.sep)[0]
+        args_dir = appargs_subdir[len(bench_dir)+1:]
+        config_base_gpgpusim = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1"
+        config_base_trace = "/accel-sim-framework/gpu-simulator/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1"
+        config_dir_gpgpusim = os.path.join(config_base_gpgpusim, bench_dir, args_dir)
+        config_dir_trace = os.path.join(config_base_trace, bench_dir, args_dir)
+        src_gpgpusim_config = os.path.join(config_dir_gpgpusim, "gpgpusim.config")
+        src_trace_config = os.path.join(config_dir_trace, "trace.config")
+        per_benchmark_gpgpusim_config = src_gpgpusim_config
+        src_reconfig_txt = os.path.join(config_dir_gpgpusim, "reconfig.txt")
+        dst_gpgpusim_config = os.path.join(this_run_dir, "gpgpusim.config")
+        dst_trace_config = os.path.join(this_run_dir, "trace.config")
+        dst_reconfig_txt = os.path.join(this_run_dir, "reconfig.txt")
+        
+        # if os.path.isfile(custom_config):
+        #     shutil.copyfile(custom_config, os.path.join(this_run_dir, "gpgpusim.config"))
+        #     self.append_gpgpusim_config(bench_dir, this_run_dir, args_dir, custom_config)
+        # if os.path.isfile(custom_reconfig):
+        #     shutil.copyfile(custom_reconfig, os.path.join(this_run_dir, "reconfig.txt"))
+        #     self.append_gpgpusim_config(bench_dir, this_run_dir, args_dir, custom_reconfig)
+        if os.path.isfile(src_gpgpusim_config):
+            shutil.copyfile(src_gpgpusim_config, dst_gpgpusim_config)
+        else:
+            # fallback: copy global config to run dir
+            # global_config = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/gpgpusim.config"
+            shutil.copyfile(src_gpgpusim_config, dst_gpgpusim_config)
 
+        if os.path.isfile(src_trace_config):
+            shutil.copyfile(src_trace_config, dst_trace_config)
+        # else: don't create trace.config if not present
+
+        if os.path.isfile(src_reconfig_txt):
+            shutil.copyfile(src_reconfig_txt, dst_reconfig_txt)
         # link the data directory
         benchmark_data_dir = os.path.join(full_data_dir, "data")
         if os.path.isdir(benchmark_data_dir):
@@ -375,7 +416,33 @@ class ConfigurationSpec:
             else:
                 txt_args = str(command_line_args)
         else:
-            txt_args = " -config ./gpgpusim.config -trace ./traces/kernelslist.g"
+            bench_dir = benchmark.replace("/", "_")
+            args_tuple = self.benchmark_args_subdirs[command_line_args]
+            src_gpgpusim_config, src_trace_config, src_reconfig_txt = self.get_benchmark_config_paths(bench_dir, args_tuple)
+            dst_gpgpusim_config = os.path.join(this_run_dir, "gpgpusim.config")
+            dst_trace_config = os.path.join(this_run_dir, "trace.config")
+            dst_reconfig_txt = os.path.join(this_run_dir, "reconfig.txt")
+
+            # Copy files if they exist
+            dst_gpgpusim_config = src_gpgpusim_config
+            dst_trace_config = src_trace_config
+            dst_reconfig_txt = src_reconfig_txt
+
+            if not os.path.isfile(dst_gpgpusim_config):
+                print(f"ERROR: gpgpusim.config not found: {dst_gpgpusim_config}")
+                raise FileNotFoundError(f"gpgpusim.config not found: {dst_gpgpusim_config}")
+            if dst_trace_config and not os.path.isfile(dst_trace_config):
+                print(f"ERROR: trace.config not found: {dst_trace_config}")
+                raise FileNotFoundError(f"trace.config not found: {dst_trace_config}")
+            if dst_reconfig_txt and not os.path.isfile(dst_reconfig_txt):
+                print(f"ERROR: reconfig.txt not found at {dst_reconfig_txt} (optional)")
+
+
+            # When generating the launch command:
+            # txt_args = f" -config {dst_gpgpusim_config}"
+            txt_args = f" -config ./gpgpusim.config"
+            txt_args += " -trace ./traces/kernelslist.g"
+            # txt_args += " -trace ./traces/kernelslist.g"
 
         if os.getenv("TORQUE_QUEUE_NAME") == None:
             queue_name = "batch"
@@ -408,13 +475,48 @@ class ConfigurationSpec:
         open(os.path.join(this_run_dir, job_template), "w").write(torque_text)
         exec_line = torque_text.splitlines()[-1]
         justrunfile = os.path.join(this_run_dir, "justrun.sh")
-        open(justrunfile, "w").write(exec_name + " " + txt_args + "\n")
+        # open(justrunfile, "w").write(exec_name + " " + txt_args + "\n")
+        with open(justrunfile, "w") as f:
+            if dst_gpgpusim_config:
+                f.write(f'export GPGPUSIM_CONFIG_PATH="{dst_gpgpusim_config}"\n')
+            if dst_trace_config:
+                f.write(f'export GPGPUSIM_TRACE_CONFIG_PATH="{dst_trace_config}"\n')
+            if dst_reconfig_txt:
+                f.write(f'export GPGPUSIM_RECONFIG_PATH="{dst_reconfig_txt}"\n')
+            f.write(exec_name + " " + txt_args + "\n")
         os.chmod(justrunfile, 0o744)
+    def get_benchmark_config_paths(self, bench_dir, args_dir):
+        config_base_gpgpusim = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1"
+        config_base_trace = "/accel-sim-framework/gpu-simulator/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1"
+        default_trace_config = "/accel-sim-framework/gpu-simulator/configs/tested-cfgs/SM7_QV100/trace.config"
 
+        config_dir_gpgpusim = os.path.join(config_base_gpgpusim, bench_dir, args_dir)
+        config_dir_trace = os.path.join(config_base_trace, bench_dir, args_dir)
+        gpgpusim_config = os.path.join(config_dir_gpgpusim, "gpgpusim.config")
+        trace_config = os.path.join(config_dir_trace, "trace.config")
+        reconfig_txt = os.path.join(config_dir_gpgpusim, "reconfig.txt")
+        # Fallback to default config if missing
+        default_gpgpusim_config = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/gpgpusim.config"
+        if not os.path.isfile(gpgpusim_config):
+            print(f"[WARN] Per-benchmark gpgpusim.config not found, using default: {default_gpgpusim_config}")
+            gpgpusim_config = default_gpgpusim_config
+        if not os.path.isfile(trace_config):
+            print(f"[WARN] Per-benchmark trace.config not found, disabling trace.")
+            trace_config = default_trace_config
+        if not os.path.isfile(reconfig_txt):
+            print(f"[WARN] Per-benchmark reconfig.txt not found, disabling reconfig.")
+            reconfig_txt = None
+        print(f"[MATCH] Benchmark: {bench_dir}, Args: {args_dir}")
+        print(f"[MATCH] gpgpusim.config: {gpgpusim_config}")
+        print(f"[MATCH] trace.config:   {trace_config}")
+        print(f"[MATCH] reconfig.txt:   {reconfig_txt}")
+        return gpgpusim_config, trace_config, reconfig_txt
     # replaces all the "REPLACE_*" strings in the gpgpusim.config file
     def append_gpgpusim_config(
         self, bench_name, this_run_dir, appargs_run_subdir, config_text_file
     ):
+        # global_config = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/gpgpusim.config"
+        config_text = open(per_benchmark_gpgpusim_config).read()
         benchmark_spec_opts_file = os.path.expandvars(
             os.path.join(
                 "$GPUAPPS_ROOT",
@@ -430,7 +532,9 @@ class ConfigurationSpec:
             benchmark_spec_opts = f.read().strip()
             f.close()
 
-        config_text = open(config_text_file).read()
+        # config_text = open(config_text_file).read()
+        # config_text += "\n" + benchmark_spec_opts + "\n" + self.params + "\n"
+        # config_text = re.sub(r'-gpgpu_phase_size \d+\n?', '', config_text)
         config_text += "\n" + benchmark_spec_opts + "\n" + self.params + "\n"
         config_text = re.sub(r'-gpgpu_phase_size \d+\n?', '', config_text)
         # Add phase size configuration if enabled
@@ -439,7 +543,7 @@ class ConfigurationSpec:
             phase_size = self.get_optimal_phase_size(bench_name, appargs_run_subdir)
             if phase_size:
                 config_text += f"\n-gpgpu_phase_size {phase_size}\n"
-                print(f"DEBUG: Setting phase size to {phase_size} in config file")
+                print(f"DEBUG/: Setting phase size to {phase_size} in config file")
             else:
                 print("DEBUG: Using default phase size")
         
@@ -450,13 +554,21 @@ class ConfigurationSpec:
             config_text += "\n" + "-hw_perf_bench_name " + bench_name + "\n"
 
         if options.trace_dir != "":
-            cfgsubdir = re.sub(r".*(configs.*)gpgpusim.config", r"\1", config_text_file)
-            config_text += "\n" + "# Accel-Sim Parameters" + "\n"
-            accelsim_cfg = os.path.expandvars(
-                os.path.join("$ACCELSIM_ROOT", cfgsubdir, "trace.config")
+            # cfgsubdir = re.sub(r".*(configs.*)gpgpusim.config", r"\1", config_text_file)
+            # config_text += "\n" + "# Accel-Sim Parameters" + "\n"
+            # accelsim_cfg = os.path.expandvars(
+            #     os.path.join("$ACCELSIM_ROOT", cfgsubdir, "trace.config")
+            # )
+            # config_text += open(accelsim_cfg).read()
+            trace_config_path = os.path.join(
+                "/accel-sim-framework/gpu-simulator/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1",
+                appargs_run_subdir, "trace.config"
             )
-            config_text += open(accelsim_cfg).read()
-
+            if os.path.isfile(trace_config_path):
+                config_text += "\n# Accel-Sim Parameters\n"
+                config_text += open(trace_config_path).read()
+            else:
+                print(f"WARNING: trace.config not found at {trace_config_path}")
         open(os.path.join(this_run_dir, "gpgpusim.config"), "w").write(config_text)
 
 
