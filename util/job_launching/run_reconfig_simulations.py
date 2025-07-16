@@ -42,7 +42,7 @@ import glob
 import datetime
 import yaml
 import common
-per_benchmark_gpgpusim_config = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1/bfs-rodinia-3.1/__data_graph65536_txt_8_512/gpgpusim.config"
+# per_benchmark_gpgpusim_config = "/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1/bfs-rodinia-3.1/__data_graph65536_txt_8_512/gpgpusim.config"
 this_directory = os.path.dirname(os.path.realpath(__file__)) + "/"
 # This function will pull the SO name out of the shared object,
 # which will have current GIT commit number attatched.
@@ -77,7 +77,7 @@ class ConfigurationSpec:
         name, params, config_file = nameTuple
         self.run_subdir = name
         self.params = params
-        self.config_file = '/accel-sim-framework/gpu-simulator/gpgpu-sim/configs/tested-cfgs/SM7_QV100/configs/rodinia3.1/bfs-rodinia-3.1/__data_graph65536_txt_8_512/gpgpusim.config'
+        self.config_file = config_file
 
     def my_print(self):
         print("Run Subdir = " + self.run_subdir)
@@ -422,7 +422,8 @@ class ConfigurationSpec:
             dst_gpgpusim_config = os.path.join(this_run_dir, "gpgpusim.config")
             dst_trace_config = os.path.join(this_run_dir, "trace.config")
             dst_reconfig_txt = os.path.join(this_run_dir, "reconfig.txt")
-
+            global per_benchmark_gpgpusim_config
+            per_benchmark_gpgpusim_config = dst_gpgpusim_config
             # Copy files if they exist
             dst_gpgpusim_config = src_gpgpusim_config
             dst_trace_config = src_trace_config
