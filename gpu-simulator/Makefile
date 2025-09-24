@@ -46,15 +46,6 @@ CXXFLAGS+=-I./trace-driven -I./trace-parser -I$(GPGPUSIM_ROOT)/libcuda -I$(GPGPU
 
 LIBS+=-L$(GPGPUSIM_ROOT)/lib/$(GPGPUSIM_CONFIG)/ -lcudart -lm -lz -lGL -pthread $(BUILD_DIR)/*.o 
 
-# Rule to compile only gpu-sim.cc
-# gpu-sim: makedirs
-# 	 $(CXX) $(CXXFLAGS) -c gpgpu-sim/src/gpgpu-sim/gpu-sim.cc -o $(BUILD_DIR)/gpu-sim.o
-
-# # Rule to clean only gpu-sim related files
-# clean-gpu-sim:
-#      	rm -f  $(BUILD_DIR)/gpu-sim.o
-
-# Add these rules to the `all` and `clean` targets if needed
 all: $(BIN_DIR)/accel-sim.out
 
 $(BUILD_DIR)/main.makedepend: depend makedirs
@@ -90,7 +81,7 @@ trace-parser: checkenv makedirs
 	$(MAKE) -C trace-parser depend
 	$(MAKE) -C trace-parser
 
-clean:	
+clean:
 	rm -rf $(BIN_DIR)
 	rm -rf $(BUILD_DIR)
 	$(MAKE) clean -C $(GPGPUSIM_ROOT)

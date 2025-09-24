@@ -1,4 +1,4 @@
 bin/
 build/
-*.makedepend.bak
+# *.makedepend.bak
 #gpgpu-sim/

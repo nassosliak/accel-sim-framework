@@ -1,4 +1,8 @@
 {
     "name": "CUDA 12.8",
-    "image": "ghcr.io/accel-sim/accel-sim-framework:Ubuntu-24.04-cuda-12.8"
+    "image": "ghcr.io/accel-sim/accel-sim-framework:Ubuntu-24.04-cuda-12.8",
+    "mounts": [
+        "source=/HDD_pelef/nliako/vscode-server,target=/root/.vscode-server,type=bind"
+    ]
 }
+

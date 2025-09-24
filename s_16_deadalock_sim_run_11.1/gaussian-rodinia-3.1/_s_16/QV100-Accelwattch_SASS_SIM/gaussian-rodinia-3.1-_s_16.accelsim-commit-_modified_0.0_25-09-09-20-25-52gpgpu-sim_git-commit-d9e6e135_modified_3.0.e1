@@ -1,0 +1,1 @@
+./justrun.sh: line 4: 3887470 Aborted                 (core dumped) /accel-sim-framework/util/job_launching/../../sim_run_11.1/gpgpu-sim-builds/accelsim-commit-_modified_0.0_25-09-09-20-25-52gpgpu-sim_git-commit-d9e6e135_modified_3.0/accel-sim.out -config ./gpgpusim.config -trace ./traces/kernelslist.g
