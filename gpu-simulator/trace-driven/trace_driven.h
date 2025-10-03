@@ -164,7 +164,7 @@ class trace_shd_warp_t : public shd_warp_t {
 
 class trace_gpgpu_sim : public gpgpu_sim {
  public:
-  trace_gpgpu_sim(const gpgpu_sim_config &config, gpgpu_context *ctx)
+  trace_gpgpu_sim(gpgpu_sim_config &config, gpgpu_context *ctx)
       : gpgpu_sim(config, ctx) {
     createSIMTCluster();
   }
@@ -175,7 +175,7 @@ class trace_gpgpu_sim : public gpgpu_sim {
 class trace_simt_core_cluster : public simt_core_cluster {
  public:
   trace_simt_core_cluster(class gpgpu_sim *gpu, unsigned cluster_id,
-                          const shader_core_config *config,
+                          shader_core_config *config,
                           const memory_config *mem_config,
                           class shader_core_stats *stats,
                           class memory_stats_t *mstats)
