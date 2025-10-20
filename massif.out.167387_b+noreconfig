@@ -1,0 +1,1842 @@
+desc: --stacks=yes
+cmd: /accel-sim-framework/util/job_launching/../../sim_run_11.1/gpgpu-sim-builds/accelsim-commit-_modified_0.0_25-10-17-07-14-25gpgpu-sim_git-commit-3e461065_modified_7.0/accel-sim.out -config ./gpgpusim.config -trace ./traces/kernelslist.g
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=14963185940
+mem_heap_B=2875438
+mem_heap_extra_B=48618
+mem_stacks_B=40728
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=22979878659
+mem_heap_B=3111163
+mem_heap_extra_B=50757
+mem_stacks_B=48136
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=35307115097
+mem_heap_B=83412926
+mem_heap_extra_B=523906
+mem_stacks_B=59312
+heap_tree=detailed
+n4: 83412926 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 74521568 0x4AB769A: calc_time_mt_wrapper(void*) (in /accel-sim-framework/gpu-simulator/gpgpu-sim/lib/gcc-9.4.0/cuda-11010/release/libcudart.so)
+  n1: 74521568 0x4E7F608: start_thread (pthread_create.c:477)
+   n0: 74521568 0x4FBB352: clone (clone.S:95)
+ n1: 5002784 0x4AB7EBD: calc_time_mt_wrapper(void*) (in /accel-sim-framework/gpu-simulator/gpgpu-sim/lib/gcc-9.4.0/cuda-11010/release/libcudart.so)
+  n1: 5002784 0x4E7F608: start_thread (pthread_create.c:477)
+   n0: 5002784 0x4FBB352: clone (clone.S:95)
+ n0: 2273206 in 259 places, all below massif's threshold (1.00%)
+ n1: 1615368 0x4950B93: allocate (new_allocator.h:114)
+  n1: 1615368 0x4950B93: allocate (alloc_traits.h:443)
+   n1: 1615368 0x4950B93: _M_allocate_buckets (hashtable_policy.h:2134)
+    n1: 1615368 0x4950B93: _M_allocate_buckets (hashtable.h:361)
+     n1: 1615368 0x4950B93: _M_rehash_aux (hashtable.h:2123)
+      n1: 1615368 0x4950B93: std::_Hashtable<unsigned long long, std::pair<unsigned long long const, mem_storage<8192u> >, std::allocator<std::pair<unsigned long long const, mem_storage<8192u> > >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&) (hashtable.h:2102)
+       n1: 1615368 0x4950E95: rehash (hashtable.h:2085)
+        n1: 1615368 0x4950E95: rehash (unordered_map.h:1122)
+         n1: 1615368 0x4950E95: memory_space_impl<8192u>::memory_space_impl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int) (memory.cc:38)
+          n0: 1615368 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=43836637516
+mem_heap_B=3538224
+mem_heap_extra_B=54720
+mem_stacks_B=55840
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=50889134454
+mem_heap_B=302137299
+mem_heap_extra_B=16365877
+mem_stacks_B=31944
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=61857317527
+mem_heap_B=331979972
+mem_heap_extra_B=16989260
+mem_stacks_B=36864
+heap_tree=detailed
+n9: 331979972 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n6: 141086720 0x49B65B9: pipelined_simd_unit::pipelined_simd_unit(register_set*, shader_core_config*, unsigned int, shader_core_ctx*, unsigned int) (shader.cc:2553)
+  n1: 70118400 0x49B6801: sfu::sfu(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2381)
+   n1: 70118400 0x49D1747: shader_core_ctx::create_exec_pipeline() (shader.cc:428)
+    n1: 70118400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 70118400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 70118400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 70118400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 70118400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 70118400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 70118400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 70118400 0x118250: main (main.cc:29)
+  n1: 45045760 0x49B6951: specialized_unit::specialized_unit(register_set*, shader_core_config*, shader_core_ctx*, int, char*, unsigned int, unsigned int) (shader.cc:2488)
+   n1: 45045760 0x49D1980: shader_core_ctx::create_exec_pipeline() (shader.cc:444)
+    n1: 45045760 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 45045760 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 45045760 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 45045760 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 45045760 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 45045760 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 45045760 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 45045760 0x118250: main (main.cc:29)
+  n1: 13598720 0x49B6871: tensor_core::tensor_core(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2389)
+   n1: 13598720 0x49D1817: shader_core_ctx::create_exec_pipeline() (shader.cc:434)
+    n1: 13598720 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 13598720 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 13598720 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 13598720 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 13598720 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 13598720 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 13598720 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 13598720 0x118250: main (main.cc:29)
+  n1: 4462080 0x49B6A31: int_unit::int_unit(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2503)
+   n1: 4462080 0x49D1677: shader_core_ctx::create_exec_pipeline() (shader.cc:422)
+    n1: 4462080 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 4462080 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 4462080 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 4462080 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 4462080 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 4462080 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 4462080 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 4462080 0x118250: main (main.cc:29)
+  n1: 4037120 0x49B69C1: dp_unit::dp_unit(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2496)
+   n1: 4037120 0x49D159F: shader_core_ctx::create_exec_pipeline() (shader.cc:417)
+    n1: 4037120 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 4037120 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 4037120 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 4037120 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 4037120 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 4037120 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 4037120 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 4037120 0x118250: main (main.cc:29)
+  n0: 3824640 in 2 places, all below massif's threshold (1.00%)
+ n3: 78643200 0x497EA69: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:195)
+  n1: 26214400 0x49BF73E: tex_cache (gpu-cache.h:1761)
+   n1: 26214400 0x49BF73E: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2624)
+    n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+     n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+      n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+       n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+        n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+         n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+          n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+           n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+            n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+             n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49BFA05: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49BFA05: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49BFA05: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2627)
+     n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+      n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49C74EA: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49C74EA: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49C74EA: shader_core_ctx::create_front_pipeline() (shader.cc:183)
+     n1: 26214400 0x11AB4C: trace_shader_core_ctx (trace_driven.h:198)
+      n1: 26214400 0x11AB4C: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+       n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+        n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+         n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+          n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+           n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+            n0: 26214400 0x118250: main (main.cc:29)
+ n2: 37879808 0x497E9C9: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:198)
+  n1: 26738688 0x499B469: baseline_cache (gpu-cache.h:1291)
+   n1: 26738688 0x499B469: data_cache (gpu-cache.h:1520)
+    n1: 26738688 0x499B469: l2_cache (gpu-cache.h:1735)
+     n1: 26738688 0x499B469: memory_sub_partition::memory_sub_partition(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:441)
+      n1: 26738688 0x499BBCE: memory_partition_unit::memory_partition_unit(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:94)
+       n1: 26738688 0x499472B: gpgpu_sim::gpgpu_sim(gpgpu_sim_config&, gpgpu_context*) (gpu-sim.cc:1038)
+        n1: 26738688 0x124F62: trace_gpgpu_sim (trace_driven.h:168)
+         n1: 26738688 0x124F62: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 26738688 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 26738688 0x118250: main (main.cc:29)
+  n1: 11141120 0x49CF9CB: baseline_cache (gpu-cache.h:1291)
+   n1: 11141120 0x49CF9CB: data_cache (gpu-cache.h:1520)
+    n1: 11141120 0x49CF9CB: l1_cache (gpu-cache.h:1711)
+     n1: 11141120 0x49CF9CB: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2655)
+      n1: 11141120 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 11141120 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 11141120 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 11141120 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 11141120 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 11141120 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 11141120 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 11141120 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 11141120 0x118250: main (main.cc:29)
+ n0: 26728780 in 603 places, all below massif's threshold (1.00%)
+ n1: 20075040 0x123CEC: allocate (new_allocator.h:114)
+  n1: 20075040 0x123CEC: allocate (alloc_traits.h:443)
+   n1: 20075040 0x123CEC: _M_allocate (stl_vector.h:343)
+    n1: 20075040 0x123CEC: std::vector<inst_trace_t, std::allocator<inst_trace_t> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 20075040 0x123051: resize (stl_vector.h:937)
+      n1: 20075040 0x123051: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:415)
+       n1: 20075040 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+        n1: 20075040 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+         n1: 20075040 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+          n1: 20075040 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+           n1: 20075040 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+            n1: 20075040 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+             n1: 20075040 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+              n1: 20075040 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+               n0: 20075040 0x118258: main (main.cc:30)
+ n1: 10092544 0x497E98D: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:192)
+  n0: 10092544 in 5 places, all below massif's threshold (1.00%)
+ n1: 8298840 0x121261: inst_trace_t::parse_from_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int) (trace_parser.cc:185)
+  n1: 8298840 0x122FC8: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:422)
+   n1: 8298840 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+    n1: 8298840 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+     n1: 8298840 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+      n1: 8298840 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+       n1: 8298840 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+        n1: 8298840 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+         n1: 8298840 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 8298840 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 8298840 0x118258: main (main.cc:30)
+ n1: 4587520 0x11A7B9: trace_shader_core_ctx::create_shd_warp() (trace_driven.cc:528)
+  n1: 4587520 0x11AB54: trace_shader_core_ctx (trace_driven.h:199)
+   n1: 4587520 0x11AB54: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+    n1: 4587520 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+     n1: 4587520 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+      n1: 4587520 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+       n1: 4587520 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+        n1: 4587520 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+         n0: 4587520 0x118250: main (main.cc:29)
+ n1: 4587520 0x49C72D7: shader_core_ctx::create_front_pipeline() (shader.cc:150)
+  n1: 4587520 0x11AB4C: trace_shader_core_ctx (trace_driven.h:198)
+   n1: 4587520 0x11AB4C: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+    n1: 4587520 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+     n1: 4587520 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+      n1: 4587520 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+       n1: 4587520 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+        n1: 4587520 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+         n0: 4587520 0x118250: main (main.cc:29)
+#-----------
+snapshot=7
+#-----------
+time=75591338392
+mem_heap_B=441398402
+mem_heap_extra_B=19444958
+mem_stacks_B=32328
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=86818724830
+mem_heap_B=503856741
+mem_heap_extra_B=21012275
+mem_stacks_B=38936
+heap_tree=peak
+n9: 503856741 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 141086720 0x49B65B9: pipelined_simd_unit::pipelined_simd_unit(register_set*, shader_core_config*, unsigned int, shader_core_ctx*, unsigned int) (shader.cc:2553)
+  n1: 70118400 0x49B6801: sfu::sfu(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2381)
+   n1: 70118400 0x49D1747: shader_core_ctx::create_exec_pipeline() (shader.cc:428)
+    n1: 70118400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 70118400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 70118400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 70118400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 70118400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 70118400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 70118400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 70118400 0x118250: main (main.cc:29)
+  n1: 45045760 0x49B6951: specialized_unit::specialized_unit(register_set*, shader_core_config*, shader_core_ctx*, int, char*, unsigned int, unsigned int) (shader.cc:2488)
+   n1: 45045760 0x49D1980: shader_core_ctx::create_exec_pipeline() (shader.cc:444)
+    n1: 45045760 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 45045760 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 45045760 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 45045760 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 45045760 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 45045760 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 45045760 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 45045760 0x118250: main (main.cc:29)
+  n1: 13598720 0x49B6871: tensor_core::tensor_core(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2389)
+   n1: 13598720 0x49D1817: shader_core_ctx::create_exec_pipeline() (shader.cc:434)
+    n1: 13598720 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 13598720 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 13598720 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 13598720 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 13598720 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 13598720 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 13598720 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 13598720 0x118250: main (main.cc:29)
+  n0: 12323840 in 4 places, all below massif's threshold (1.00%)
+ n3: 78643200 0x497EA69: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:195)
+  n1: 26214400 0x49BF73E: tex_cache (gpu-cache.h:1761)
+   n1: 26214400 0x49BF73E: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2624)
+    n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+     n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+      n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+       n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+        n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+         n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+          n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+           n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+            n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+             n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49BFA05: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49BFA05: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49BFA05: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2627)
+     n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+      n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49C74EA: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49C74EA: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49C74EA: shader_core_ctx::create_front_pipeline() (shader.cc:183)
+     n1: 26214400 0x11AB4C: trace_shader_core_ctx (trace_driven.h:198)
+      n1: 26214400 0x11AB4C: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+       n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+        n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+         n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+          n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+           n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+            n0: 26214400 0x118250: main (main.cc:29)
+ n1: 76344960 0x123CEC: allocate (new_allocator.h:114)
+  n1: 76344960 0x123CEC: allocate (alloc_traits.h:443)
+   n1: 76344960 0x123CEC: _M_allocate (stl_vector.h:343)
+    n1: 76344960 0x123CEC: std::vector<inst_trace_t, std::allocator<inst_trace_t> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 76344960 0x123051: resize (stl_vector.h:937)
+      n1: 76344960 0x123051: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:415)
+       n1: 76344960 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+        n1: 76344960 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+         n1: 76344960 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+          n1: 76344960 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+           n1: 76344960 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+            n1: 76344960 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+             n1: 76344960 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+              n1: 76344960 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+               n0: 76344960 0x118258: main (main.cc:30)
+ n1: 61405696 0x4927632: allocate (new_allocator.h:114)
+  n1: 61405696 0x4927632: allocate (alloc_traits.h:443)
+   n1: 61405696 0x4927632: _M_allocate (stl_vector.h:343)
+    n1: 61405696 0x4927632: _M_allocate_and_copy<__gnu_cxx::__normal_iterator<const warp_inst_t::per_thread_info*, std::vector<warp_inst_t::per_thread_info> > > (stl_vector.h:1508)
+     n3: 61405696 0x4927632: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::operator=(std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> > const&) (vector.tcc:226)
+      n1: 53467392 0x49A2BFB: operator= (abstract_hardware_model.h:1052)
+       n1: 53467392 0x49A2BFB: mem_fetch::mem_fetch(mem_access_t const&, warp_inst_t const*, unsigned long long, unsigned int, unsigned int, unsigned int, unsigned int, memory_config const*, unsigned long long, mem_fetch*, mem_fetch*) (mem_fetch.cc:48)
+        n1: 53467392 0x49B5D96: alloc (shader.h:2080)
+         n1: 53467392 0x49B5D96: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+          n1: 53467392 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+           n1: 53467392 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+            n1: 53467392 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+             n1: 53467392 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+              n1: 53467392 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+               n1: 53467392 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+                n1: 53467392 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+                 n1: 53467392 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                  n0: 53467392 0x118258: main (main.cc:30)
+      n1: 7713024 0x49C33C1: operator= (abstract_hardware_model.h:1052)
+       n1: 7713024 0x49C33C1: shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (shader.cc:1058)
+        n1: 7713024 0x11843C: trace_shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (trace_driven.cc:661)
+         n1: 7713024 0x49B9926: scheduler_unit::cycle() (shader.cc:1367)
+          n1: 7713024 0x49BA785: shader_core_ctx::issue() (shader.cc:1145)
+           n1: 7713024 0x49CEFD5: shader_core_ctx::cycle() (shader.cc:3687)
+            n1: 7713024 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+             n1: 7713024 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+              n1: 7713024 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+               n1: 7713024 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                n0: 7713024 0x118258: main (main.cc:30)
+      n0: 225280 in 1 place, below massif's threshold (1.00%)
+ n0: 50407485 in 671 places, all below massif's threshold (1.00%)
+ n2: 37879808 0x497E9C9: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:198)
+  n1: 26738688 0x499B469: baseline_cache (gpu-cache.h:1291)
+   n1: 26738688 0x499B469: data_cache (gpu-cache.h:1520)
+    n1: 26738688 0x499B469: l2_cache (gpu-cache.h:1735)
+     n1: 26738688 0x499B469: memory_sub_partition::memory_sub_partition(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:441)
+      n1: 26738688 0x499BBCE: memory_partition_unit::memory_partition_unit(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:94)
+       n1: 26738688 0x499472B: gpgpu_sim::gpgpu_sim(gpgpu_sim_config&, gpgpu_context*) (gpu-sim.cc:1038)
+        n1: 26738688 0x124F62: trace_gpgpu_sim (trace_driven.h:168)
+         n1: 26738688 0x124F62: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 26738688 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 26738688 0x118250: main (main.cc:29)
+  n1: 11141120 0x49CF9CB: baseline_cache (gpu-cache.h:1291)
+   n1: 11141120 0x49CF9CB: data_cache (gpu-cache.h:1520)
+    n1: 11141120 0x49CF9CB: l1_cache (gpu-cache.h:1711)
+     n1: 11141120 0x49CF9CB: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2655)
+      n1: 11141120 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 11141120 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 11141120 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 11141120 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 11141120 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 11141120 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 11141120 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 11141120 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 11141120 0x118250: main (main.cc:29)
+ n1: 31591560 0x121261: inst_trace_t::parse_from_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int) (trace_parser.cc:185)
+  n1: 31591560 0x122FC8: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:422)
+   n1: 31591560 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+    n1: 31591560 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+     n1: 31591560 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+      n1: 31591560 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+       n1: 31591560 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+        n1: 31591560 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+         n1: 31591560 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 31591560 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 31591560 0x118258: main (main.cc:30)
+ n1: 16404768 0x49B5D46: alloc (shader.h:2080)
+  n1: 16404768 0x49B5D46: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+   n1: 16404768 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+    n1: 16404768 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+     n1: 16404768 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+      n1: 16404768 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+       n1: 16404768 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+        n1: 16404768 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+         n1: 16404768 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 16404768 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 16404768 0x118258: main (main.cc:30)
+ n1: 10092544 0x497E98D: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:192)
+  n0: 10092544 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=97988933865
+mem_heap_B=483396805
+mem_heap_extra_B=20632851
+mem_stacks_B=31544
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=109159140333
+mem_heap_B=453161421
+mem_heap_extra_B=19877747
+mem_stacks_B=31464
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=118467640242
+mem_heap_B=432978722
+mem_heap_extra_B=19342806
+mem_stacks_B=33704
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=126845292814
+mem_heap_B=437365378
+mem_heap_extra_B=19409598
+mem_stacks_B=32336
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=138677412057
+mem_heap_B=450287610
+mem_heap_extra_B=19593470
+mem_stacks_B=34360
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=153467560947
+mem_heap_B=450470373
+mem_heap_extra_B=19385291
+mem_stacks_B=31528
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=165299679989
+mem_heap_B=475689978
+mem_heap_extra_B=20228182
+mem_stacks_B=32376
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=172694756359
+mem_heap_B=483960626
+mem_heap_extra_B=20528502
+mem_stacks_B=33720
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=183047860555
+mem_heap_B=494757325
+mem_heap_extra_B=20898539
+mem_stacks_B=38912
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=196358994476
+mem_heap_B=494999298
+mem_heap_extra_B=20955270
+mem_stacks_B=33768
+heap_tree=detailed
+n10: 494999298 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 141086720 0x49B65B9: pipelined_simd_unit::pipelined_simd_unit(register_set*, shader_core_config*, unsigned int, shader_core_ctx*, unsigned int) (shader.cc:2553)
+  n1: 70118400 0x49B6801: sfu::sfu(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2381)
+   n1: 70118400 0x49D1747: shader_core_ctx::create_exec_pipeline() (shader.cc:428)
+    n1: 70118400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 70118400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 70118400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 70118400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 70118400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 70118400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 70118400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 70118400 0x118250: main (main.cc:29)
+  n1: 45045760 0x49B6951: specialized_unit::specialized_unit(register_set*, shader_core_config*, shader_core_ctx*, int, char*, unsigned int, unsigned int) (shader.cc:2488)
+   n1: 45045760 0x49D1980: shader_core_ctx::create_exec_pipeline() (shader.cc:444)
+    n1: 45045760 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 45045760 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 45045760 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 45045760 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 45045760 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 45045760 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 45045760 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 45045760 0x118250: main (main.cc:29)
+  n1: 13598720 0x49B6871: tensor_core::tensor_core(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2389)
+   n1: 13598720 0x49D1817: shader_core_ctx::create_exec_pipeline() (shader.cc:434)
+    n1: 13598720 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 13598720 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 13598720 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 13598720 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 13598720 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 13598720 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 13598720 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 13598720 0x118250: main (main.cc:29)
+  n0: 12323840 in 4 places, all below massif's threshold (1.00%)
+ n3: 78643200 0x497EA69: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:195)
+  n1: 26214400 0x49BF73E: tex_cache (gpu-cache.h:1761)
+   n1: 26214400 0x49BF73E: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2624)
+    n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+     n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+      n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+       n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+        n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+         n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+          n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+           n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+            n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+             n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49BFA05: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49BFA05: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49BFA05: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2627)
+     n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+      n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49C74EA: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49C74EA: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49C74EA: shader_core_ctx::create_front_pipeline() (shader.cc:183)
+     n1: 26214400 0x11AB4C: trace_shader_core_ctx (trace_driven.h:198)
+      n1: 26214400 0x11AB4C: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+       n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+        n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+         n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+          n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+           n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+            n0: 26214400 0x118250: main (main.cc:29)
+ n1: 76344960 0x123CEC: allocate (new_allocator.h:114)
+  n1: 76344960 0x123CEC: allocate (alloc_traits.h:443)
+   n1: 76344960 0x123CEC: _M_allocate (stl_vector.h:343)
+    n1: 76344960 0x123CEC: std::vector<inst_trace_t, std::allocator<inst_trace_t> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 76344960 0x123051: resize (stl_vector.h:937)
+      n1: 76344960 0x123051: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:415)
+       n1: 76344960 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+        n1: 76344960 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+         n1: 76344960 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+          n1: 76344960 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+           n1: 76344960 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+            n1: 76344960 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+             n1: 76344960 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+              n1: 76344960 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+               n0: 76344960 0x118258: main (main.cc:30)
+ n1: 55176704 0x4927632: allocate (new_allocator.h:114)
+  n1: 55176704 0x4927632: allocate (alloc_traits.h:443)
+   n1: 55176704 0x4927632: _M_allocate (stl_vector.h:343)
+    n1: 55176704 0x4927632: _M_allocate_and_copy<__gnu_cxx::__normal_iterator<const warp_inst_t::per_thread_info*, std::vector<warp_inst_t::per_thread_info> > > (stl_vector.h:1508)
+     n3: 55176704 0x4927632: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::operator=(std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> > const&) (vector.tcc:226)
+      n1: 42549760 0x49A2BFB: operator= (abstract_hardware_model.h:1052)
+       n1: 42549760 0x49A2BFB: mem_fetch::mem_fetch(mem_access_t const&, warp_inst_t const*, unsigned long long, unsigned int, unsigned int, unsigned int, unsigned int, memory_config const*, unsigned long long, mem_fetch*, mem_fetch*) (mem_fetch.cc:48)
+        n1: 42549760 0x49B5D96: alloc (shader.h:2080)
+         n1: 42549760 0x49B5D96: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+          n1: 42549760 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+           n1: 42549760 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+            n1: 42549760 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+             n1: 42549760 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+              n1: 42549760 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+               n1: 42549760 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+                n1: 42549760 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+                 n1: 42549760 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                  n0: 42549760 0x118258: main (main.cc:30)
+      n1: 12401664 0x49C33C1: operator= (abstract_hardware_model.h:1052)
+       n1: 12401664 0x49C33C1: shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (shader.cc:1058)
+        n1: 12401664 0x11843C: trace_shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (trace_driven.cc:661)
+         n1: 12401664 0x49B9926: scheduler_unit::cycle() (shader.cc:1367)
+          n1: 12401664 0x49BA785: shader_core_ctx::issue() (shader.cc:1145)
+           n1: 12401664 0x49CEFD5: shader_core_ctx::cycle() (shader.cc:3687)
+            n1: 12401664 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+             n1: 12401664 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+              n1: 12401664 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+               n1: 12401664 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                n0: 12401664 0x118258: main (main.cc:30)
+      n0: 225280 in 1 place, below massif's threshold (1.00%)
+ n0: 45207770 in 679 places, all below massif's threshold (1.00%)
+ n2: 37879808 0x497E9C9: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:198)
+  n1: 26738688 0x499B469: baseline_cache (gpu-cache.h:1291)
+   n1: 26738688 0x499B469: data_cache (gpu-cache.h:1520)
+    n1: 26738688 0x499B469: l2_cache (gpu-cache.h:1735)
+     n1: 26738688 0x499B469: memory_sub_partition::memory_sub_partition(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:441)
+      n1: 26738688 0x499BBCE: memory_partition_unit::memory_partition_unit(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:94)
+       n1: 26738688 0x499472B: gpgpu_sim::gpgpu_sim(gpgpu_sim_config&, gpgpu_context*) (gpu-sim.cc:1038)
+        n1: 26738688 0x124F62: trace_gpgpu_sim (trace_driven.h:168)
+         n1: 26738688 0x124F62: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 26738688 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 26738688 0x118250: main (main.cc:29)
+  n1: 11141120 0x49CF9CB: baseline_cache (gpu-cache.h:1291)
+   n1: 11141120 0x49CF9CB: data_cache (gpu-cache.h:1520)
+    n1: 11141120 0x49CF9CB: l1_cache (gpu-cache.h:1711)
+     n1: 11141120 0x49CF9CB: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2655)
+      n1: 11141120 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 11141120 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 11141120 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 11141120 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 11141120 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 11141120 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 11141120 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 11141120 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 11141120 0x118250: main (main.cc:29)
+ n1: 31591560 0x121261: inst_trace_t::parse_from_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int) (trace_parser.cc:185)
+  n1: 31591560 0x122FC8: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:422)
+   n1: 31591560 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+    n1: 31591560 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+     n1: 31591560 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+      n1: 31591560 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+       n1: 31591560 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+        n1: 31591560 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+         n1: 31591560 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 31591560 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 31591560 0x118258: main (main.cc:30)
+ n1: 13055040 0x49B5D46: alloc (shader.h:2080)
+  n1: 13055040 0x49B5D46: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+   n1: 13055040 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+    n1: 13055040 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+     n1: 13055040 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+      n1: 13055040 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+       n1: 13055040 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+        n1: 13055040 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+         n1: 13055040 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 13055040 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 13055040 0x118258: main (main.cc:30)
+ n1: 10092544 0x497E98D: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:192)
+  n0: 10092544 in 5 places, all below massif's threshold (1.00%)
+ n1: 5920992 0x11A46E: get_next_trace_inst (trace_driven.cc:63)
+  n1: 5920992 0x11A46E: trace_shd_warp_t::get_next_trace_inst() (trace_driven.cc:60)
+   n0: 5920992 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=206381148976
+mem_heap_B=487527786
+mem_heap_extra_B=20739254
+mem_stacks_B=32272
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=211966258871
+mem_heap_B=481338021
+mem_heap_extra_B=20558347
+mem_stacks_B=31424
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=223136478683
+mem_heap_B=470816962
+mem_heap_extra_B=20232902
+mem_stacks_B=33744
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=237099255083
+mem_heap_B=462384685
+mem_heap_extra_B=20002563
+mem_stacks_B=31368
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=251062030919
+mem_heap_B=467207885
+mem_heap_extra_B=20166491
+mem_stacks_B=31336
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=262232250769
+mem_heap_B=477357522
+mem_heap_extra_B=20509662
+mem_stacks_B=33768
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=276195025637
+mem_heap_B=489312274
+mem_heap_extra_B=20933622
+mem_stacks_B=33784
+heap_tree=detailed
+n10: 489312274 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 141086720 0x49B65B9: pipelined_simd_unit::pipelined_simd_unit(register_set*, shader_core_config*, unsigned int, shader_core_ctx*, unsigned int) (shader.cc:2553)
+  n1: 70118400 0x49B6801: sfu::sfu(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2381)
+   n1: 70118400 0x49D1747: shader_core_ctx::create_exec_pipeline() (shader.cc:428)
+    n1: 70118400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 70118400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 70118400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 70118400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 70118400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 70118400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 70118400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 70118400 0x118250: main (main.cc:29)
+  n1: 45045760 0x49B6951: specialized_unit::specialized_unit(register_set*, shader_core_config*, shader_core_ctx*, int, char*, unsigned int, unsigned int) (shader.cc:2488)
+   n1: 45045760 0x49D1980: shader_core_ctx::create_exec_pipeline() (shader.cc:444)
+    n1: 45045760 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 45045760 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 45045760 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 45045760 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 45045760 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 45045760 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 45045760 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 45045760 0x118250: main (main.cc:29)
+  n1: 13598720 0x49B6871: tensor_core::tensor_core(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2389)
+   n1: 13598720 0x49D1817: shader_core_ctx::create_exec_pipeline() (shader.cc:434)
+    n1: 13598720 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 13598720 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 13598720 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 13598720 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 13598720 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 13598720 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 13598720 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 13598720 0x118250: main (main.cc:29)
+  n0: 12323840 in 4 places, all below massif's threshold (1.00%)
+ n3: 78643200 0x497EA69: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:195)
+  n1: 26214400 0x49BF73E: tex_cache (gpu-cache.h:1761)
+   n1: 26214400 0x49BF73E: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2624)
+    n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+     n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+      n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+       n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+        n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+         n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+          n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+           n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+            n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+             n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49BFA05: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49BFA05: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49BFA05: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2627)
+     n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+      n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49C74EA: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49C74EA: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49C74EA: shader_core_ctx::create_front_pipeline() (shader.cc:183)
+     n1: 26214400 0x11AB4C: trace_shader_core_ctx (trace_driven.h:198)
+      n1: 26214400 0x11AB4C: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+       n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+        n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+         n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+          n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+           n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+            n0: 26214400 0x118250: main (main.cc:29)
+ n1: 76344960 0x123CEC: allocate (new_allocator.h:114)
+  n1: 76344960 0x123CEC: allocate (alloc_traits.h:443)
+   n1: 76344960 0x123CEC: _M_allocate (stl_vector.h:343)
+    n1: 76344960 0x123CEC: std::vector<inst_trace_t, std::allocator<inst_trace_t> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 76344960 0x123051: resize (stl_vector.h:937)
+      n1: 76344960 0x123051: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:415)
+       n1: 76344960 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+        n1: 76344960 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+         n1: 76344960 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+          n1: 76344960 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+           n1: 76344960 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+            n1: 76344960 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+             n1: 76344960 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+              n1: 76344960 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+               n0: 76344960 0x118258: main (main.cc:30)
+ n1: 50183936 0x4927632: allocate (new_allocator.h:114)
+  n1: 50183936 0x4927632: allocate (alloc_traits.h:443)
+   n1: 50183936 0x4927632: _M_allocate (stl_vector.h:343)
+    n1: 50183936 0x4927632: _M_allocate_and_copy<__gnu_cxx::__normal_iterator<const warp_inst_t::per_thread_info*, std::vector<warp_inst_t::per_thread_info> > > (stl_vector.h:1508)
+     n3: 50183936 0x4927632: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::operator=(std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> > const&) (vector.tcc:226)
+      n1: 37449984 0x49A2BFB: operator= (abstract_hardware_model.h:1052)
+       n1: 37449984 0x49A2BFB: mem_fetch::mem_fetch(mem_access_t const&, warp_inst_t const*, unsigned long long, unsigned int, unsigned int, unsigned int, unsigned int, memory_config const*, unsigned long long, mem_fetch*, mem_fetch*) (mem_fetch.cc:48)
+        n1: 37449984 0x49B5D96: alloc (shader.h:2080)
+         n1: 37449984 0x49B5D96: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+          n1: 37449984 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+           n1: 37449984 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+            n1: 37449984 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+             n1: 37449984 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+              n1: 37449984 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+               n1: 37449984 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+                n1: 37449984 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+                 n1: 37449984 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                  n0: 37449984 0x118258: main (main.cc:30)
+      n1: 12508672 0x49C33C1: operator= (abstract_hardware_model.h:1052)
+       n1: 12508672 0x49C33C1: shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (shader.cc:1058)
+        n1: 12508672 0x11843C: trace_shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (trace_driven.cc:661)
+         n1: 12508672 0x49B9926: scheduler_unit::cycle() (shader.cc:1367)
+          n1: 12508672 0x49BA785: shader_core_ctx::issue() (shader.cc:1145)
+           n1: 12508672 0x49CEFD5: shader_core_ctx::cycle() (shader.cc:3687)
+            n1: 12508672 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+             n1: 12508672 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+              n1: 12508672 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+               n1: 12508672 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                n0: 12508672 0x118258: main (main.cc:30)
+      n0: 225280 in 1 place, below massif's threshold (1.00%)
+ n0: 46291242 in 679 places, all below massif's threshold (1.00%)
+ n2: 37879808 0x497E9C9: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:198)
+  n1: 26738688 0x499B469: baseline_cache (gpu-cache.h:1291)
+   n1: 26738688 0x499B469: data_cache (gpu-cache.h:1520)
+    n1: 26738688 0x499B469: l2_cache (gpu-cache.h:1735)
+     n1: 26738688 0x499B469: memory_sub_partition::memory_sub_partition(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:441)
+      n1: 26738688 0x499BBCE: memory_partition_unit::memory_partition_unit(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:94)
+       n1: 26738688 0x499472B: gpgpu_sim::gpgpu_sim(gpgpu_sim_config&, gpgpu_context*) (gpu-sim.cc:1038)
+        n1: 26738688 0x124F62: trace_gpgpu_sim (trace_driven.h:168)
+         n1: 26738688 0x124F62: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 26738688 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 26738688 0x118250: main (main.cc:29)
+  n1: 11141120 0x49CF9CB: baseline_cache (gpu-cache.h:1291)
+   n1: 11141120 0x49CF9CB: data_cache (gpu-cache.h:1520)
+    n1: 11141120 0x49CF9CB: l1_cache (gpu-cache.h:1711)
+     n1: 11141120 0x49CF9CB: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2655)
+      n1: 11141120 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 11141120 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 11141120 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 11141120 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 11141120 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 11141120 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 11141120 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 11141120 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 11141120 0x118250: main (main.cc:29)
+ n1: 31591560 0x121261: inst_trace_t::parse_from_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int) (trace_parser.cc:185)
+  n1: 31591560 0x122FC8: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:422)
+   n1: 31591560 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+    n1: 31591560 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+     n1: 31591560 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+      n1: 31591560 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+       n1: 31591560 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+        n1: 31591560 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+         n1: 31591560 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 31591560 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 31591560 0x118258: main (main.cc:30)
+ n1: 11490336 0x49B5D46: alloc (shader.h:2080)
+  n1: 11490336 0x49B5D46: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+   n1: 11490336 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+    n1: 11490336 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+     n1: 11490336 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+      n1: 11490336 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+       n1: 11490336 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+        n1: 11490336 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+         n1: 11490336 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 11490336 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 11490336 0x118258: main (main.cc:30)
+ n1: 10092544 0x497E98D: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:192)
+  n0: 10092544 in 5 places, all below massif's threshold (1.00%)
+ n1: 5707968 0x11A46E: get_next_trace_inst (trace_driven.cc:63)
+  n1: 5707968 0x11A46E: trace_shd_warp_t::get_next_trace_inst() (trace_driven.cc:60)
+   n0: 5707968 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=290157800459
+mem_heap_B=497557250
+mem_heap_extra_B=21259462
+mem_stacks_B=33752
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=298535465317
+mem_heap_B=500866810
+mem_heap_extra_B=21412054
+mem_stacks_B=33672
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=309705685119
+mem_heap_B=501769002
+mem_heap_extra_B=21483182
+mem_stacks_B=33768
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=318083349969
+mem_heap_B=501108970
+mem_heap_extra_B=21496934
+mem_stacks_B=33784
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=329253569816
+mem_heap_B=498875090
+mem_heap_extra_B=21467302
+mem_stacks_B=32056
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=340423789624
+mem_heap_B=496867130
+mem_heap_extra_B=21416782
+mem_stacks_B=33816
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=354631524192
+mem_heap_B=492082690
+mem_heap_extra_B=21266446
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=368839261853
+mem_heap_B=486347698
+mem_heap_extra_B=21014758
+mem_stacks_B=33760
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=375943130127
+mem_heap_B=483394034
+mem_heap_extra_B=20890910
+mem_stacks_B=33672
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=390150864780
+mem_heap_B=478391866
+mem_heap_extra_B=20620974
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=404358598750
+mem_heap_B=476380650
+mem_heap_extra_B=20496254
+mem_stacks_B=33768
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=415825031699
+mem_heap_B=477457370
+mem_heap_extra_B=20523886
+mem_stacks_B=33768
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=430158074024
+mem_heap_B=484878525
+mem_heap_extra_B=20854931
+mem_stacks_B=31528
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=440191202853
+mem_heap_B=485915766
+mem_heap_extra_B=21001194
+mem_stacks_B=33784
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=448850384301
+mem_heap_B=482241898
+mem_heap_extra_B=21007894
+mem_stacks_B=33768
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=458952759969
+mem_heap_B=476774222
+mem_heap_extra_B=20951682
+mem_stacks_B=36880
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=465447145079
+mem_heap_B=468436054
+mem_heap_extra_B=20685058
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=476271119753
+mem_heap_B=453402984
+mem_heap_extra_B=20137056
+mem_stacks_B=39984
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=489259890225
+mem_heap_B=445484982
+mem_heap_extra_B=19725642
+mem_stacks_B=36696
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=500083864446
+mem_heap_B=450517650
+mem_heap_extra_B=19831542
+mem_stacks_B=33096
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=512351039118
+mem_heap_B=447998205
+mem_heap_extra_B=19746355
+mem_stacks_B=31680
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=525339811703
+mem_heap_B=446167743
+mem_heap_extra_B=19658321
+mem_stacks_B=36736
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=536163785647
+mem_heap_B=445879581
+mem_heap_extra_B=19593851
+mem_stacks_B=39096
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=548430958832
+mem_heap_B=451334821
+mem_heap_extra_B=19613923
+mem_stacks_B=39168
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=549721101445
+mem_heap_B=450989794
+mem_heap_extra_B=19546622
+mem_stacks_B=34168
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=551011244050
+mem_heap_B=451406541
+mem_heap_extra_B=19539603
+mem_stacks_B=31728
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=552301386651
+mem_heap_B=452629205
+mem_heap_extra_B=19595523
+mem_stacks_B=39360
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=553591529277
+mem_heap_B=453031138
+mem_heap_extra_B=19556406
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=554881671895
+mem_heap_B=454455434
+mem_heap_extra_B=19576350
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=556171814512
+mem_heap_B=454893026
+mem_heap_extra_B=19592886
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=557461957112
+mem_heap_B=455446082
+mem_heap_extra_B=19623014
+mem_stacks_B=33784
+heap_tree=detailed
+n10: 455446082 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 141086720 0x49B65B9: pipelined_simd_unit::pipelined_simd_unit(register_set*, shader_core_config*, unsigned int, shader_core_ctx*, unsigned int) (shader.cc:2553)
+  n1: 70118400 0x49B6801: sfu::sfu(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2381)
+   n1: 70118400 0x49D1747: shader_core_ctx::create_exec_pipeline() (shader.cc:428)
+    n1: 70118400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 70118400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 70118400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 70118400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 70118400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 70118400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 70118400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 70118400 0x118250: main (main.cc:29)
+  n1: 45045760 0x49B6951: specialized_unit::specialized_unit(register_set*, shader_core_config*, shader_core_ctx*, int, char*, unsigned int, unsigned int) (shader.cc:2488)
+   n1: 45045760 0x49D1980: shader_core_ctx::create_exec_pipeline() (shader.cc:444)
+    n1: 45045760 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 45045760 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 45045760 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 45045760 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 45045760 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 45045760 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 45045760 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 45045760 0x118250: main (main.cc:29)
+  n1: 13598720 0x49B6871: tensor_core::tensor_core(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2389)
+   n1: 13598720 0x49D1817: shader_core_ctx::create_exec_pipeline() (shader.cc:434)
+    n1: 13598720 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 13598720 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 13598720 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 13598720 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 13598720 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 13598720 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 13598720 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 13598720 0x118250: main (main.cc:29)
+  n0: 12323840 in 4 places, all below massif's threshold (1.00%)
+ n3: 78643200 0x497EA69: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:195)
+  n1: 26214400 0x49BF73E: tex_cache (gpu-cache.h:1761)
+   n1: 26214400 0x49BF73E: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2624)
+    n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+     n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+      n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+       n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+        n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+         n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+          n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+           n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+            n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+             n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49BFA05: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49BFA05: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49BFA05: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2627)
+     n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+      n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49C74EA: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49C74EA: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49C74EA: shader_core_ctx::create_front_pipeline() (shader.cc:183)
+     n1: 26214400 0x11AB4C: trace_shader_core_ctx (trace_driven.h:198)
+      n1: 26214400 0x11AB4C: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+       n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+        n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+         n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+          n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+           n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+            n0: 26214400 0x118250: main (main.cc:29)
+ n1: 77550720 0x123CEC: allocate (new_allocator.h:114)
+  n1: 77550720 0x123CEC: allocate (alloc_traits.h:443)
+   n1: 77550720 0x123CEC: _M_allocate (stl_vector.h:343)
+    n1: 77550720 0x123CEC: std::vector<inst_trace_t, std::allocator<inst_trace_t> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 77550720 0x123051: resize (stl_vector.h:937)
+      n1: 77550720 0x123051: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:415)
+       n1: 77550720 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+        n1: 77550720 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+         n1: 77550720 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+          n1: 77550720 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+           n1: 77550720 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+            n1: 77550720 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+             n1: 77550720 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+              n1: 77550720 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+               n0: 77550720 0x118258: main (main.cc:30)
+ n0: 41569706 in 679 places, all below massif's threshold (1.00%)
+ n2: 37879808 0x497E9C9: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:198)
+  n1: 26738688 0x499B469: baseline_cache (gpu-cache.h:1291)
+   n1: 26738688 0x499B469: data_cache (gpu-cache.h:1520)
+    n1: 26738688 0x499B469: l2_cache (gpu-cache.h:1735)
+     n1: 26738688 0x499B469: memory_sub_partition::memory_sub_partition(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:441)
+      n1: 26738688 0x499BBCE: memory_partition_unit::memory_partition_unit(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:94)
+       n1: 26738688 0x499472B: gpgpu_sim::gpgpu_sim(gpgpu_sim_config&, gpgpu_context*) (gpu-sim.cc:1038)
+        n1: 26738688 0x124F62: trace_gpgpu_sim (trace_driven.h:168)
+         n1: 26738688 0x124F62: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 26738688 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 26738688 0x118250: main (main.cc:29)
+  n1: 11141120 0x49CF9CB: baseline_cache (gpu-cache.h:1291)
+   n1: 11141120 0x49CF9CB: data_cache (gpu-cache.h:1520)
+    n1: 11141120 0x49CF9CB: l1_cache (gpu-cache.h:1711)
+     n1: 11141120 0x49CF9CB: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2655)
+      n1: 11141120 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 11141120 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 11141120 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 11141120 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 11141120 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 11141120 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 11141120 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 11141120 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 11141120 0x118250: main (main.cc:29)
+ n1: 31589976 0x121261: inst_trace_t::parse_from_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int) (trace_parser.cc:185)
+  n1: 31589976 0x122FC8: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:422)
+   n1: 31589976 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+    n1: 31589976 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+     n1: 31589976 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+      n1: 31589976 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+       n1: 31589976 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+        n1: 31589976 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+         n1: 31589976 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 31589976 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 31589976 0x118258: main (main.cc:30)
+ n1: 22787072 0x4927632: allocate (new_allocator.h:114)
+  n1: 22787072 0x4927632: allocate (alloc_traits.h:443)
+   n1: 22787072 0x4927632: _M_allocate (stl_vector.h:343)
+    n1: 22787072 0x4927632: _M_allocate_and_copy<__gnu_cxx::__normal_iterator<const warp_inst_t::per_thread_info*, std::vector<warp_inst_t::per_thread_info> > > (stl_vector.h:1508)
+     n3: 22787072 0x4927632: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::operator=(std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> > const&) (vector.tcc:226)
+      n1: 12562176 0x49C33C1: operator= (abstract_hardware_model.h:1052)
+       n1: 12562176 0x49C33C1: shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (shader.cc:1058)
+        n1: 12562176 0x11843C: trace_shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (trace_driven.cc:661)
+         n1: 12562176 0x49B9926: scheduler_unit::cycle() (shader.cc:1367)
+          n1: 12562176 0x49BA785: shader_core_ctx::issue() (shader.cc:1145)
+           n1: 12562176 0x49CEFD5: shader_core_ctx::cycle() (shader.cc:3687)
+            n1: 12562176 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+             n1: 12562176 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+              n1: 12562176 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+               n1: 12562176 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                n0: 12562176 0x118258: main (main.cc:30)
+      n1: 9999616 0x49A2BFB: operator= (abstract_hardware_model.h:1052)
+       n1: 9999616 0x49A2BFB: mem_fetch::mem_fetch(mem_access_t const&, warp_inst_t const*, unsigned long long, unsigned int, unsigned int, unsigned int, unsigned int, memory_config const*, unsigned long long, mem_fetch*, mem_fetch*) (mem_fetch.cc:48)
+        n1: 9999616 0x49B5D96: alloc (shader.h:2080)
+         n1: 9999616 0x49B5D96: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+          n1: 9999616 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+           n1: 9999616 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+            n1: 9999616 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+             n1: 9999616 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+              n1: 9999616 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+               n1: 9999616 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+                n1: 9999616 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+                 n1: 9999616 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                  n0: 9999616 0x118258: main (main.cc:30)
+      n0: 225280 in 1 place, below massif's threshold (1.00%)
+ n1: 10092544 0x497E98D: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:192)
+  n0: 10092544 in 5 places, all below massif's threshold (1.00%)
+ n1: 8011520 0x11B5D5: allocate (new_allocator.h:114)
+  n1: 8011520 0x11B5D5: allocate (alloc_traits.h:443)
+   n1: 8011520 0x11B5D5: _M_allocate (stl_vector.h:343)
+    n1: 8011520 0x11B5D5: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 8011520 0x119D9E: resize (stl_vector.h:937)
+      n1: 8011520 0x119D9E: set_addr (abstract_hardware_model.h:1107)
+       n1: 8011520 0x119D9E: trace_warp_inst_t::parse_from_trace_struct(inst_trace_t const&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, OpcodeChar, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, OpcodeChar> > > const*, trace_config const*, kernel_trace_t const*) (trace_driven.cc:250)
+        n1: 8011520 0x11A6C9: get_next_trace_inst (trace_driven.cc:64)
+         n2: 8011520 0x11A6C9: trace_shd_warp_t::get_next_trace_inst() (trace_driven.cc:60)
+          n1: 7301888 0x49B48DA: decode (shader.cc:905)
+           n1: 7301888 0x49B48DA: shader_core_ctx::decode() (shader.cc:901)
+            n1: 7301888 0x49CEFFA: cycle (shader.cc:3689)
+             n1: 7301888 0x49CEFFA: shader_core_ctx::cycle() (shader.cc:3679)
+              n1: 7301888 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+               n1: 7301888 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+                n1: 7301888 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+                 n1: 7301888 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                  n0: 7301888 0x118258: main (main.cc:30)
+          n0: 709632 in 1 place, below massif's threshold (1.00%)
+ n1: 6234816 0x11A46E: get_next_trace_inst (trace_driven.cc:63)
+  n1: 6234816 0x11A46E: trace_shd_warp_t::get_next_trace_inst() (trace_driven.cc:60)
+   n0: 6234816 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=57
+#-----------
+time=558752099715
+mem_heap_B=457870069
+mem_heap_extra_B=19693299
+mem_stacks_B=31936
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=560042242356
+mem_heap_B=459514269
+mem_heap_extra_B=19760939
+mem_stacks_B=31336
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=561332384967
+mem_heap_B=461716485
+mem_heap_extra_B=19841419
+mem_stacks_B=31720
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=562622527571
+mem_heap_B=462847354
+mem_heap_extra_B=19890150
+mem_stacks_B=32104
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=563912671705
+mem_heap_B=465033269
+mem_heap_extra_B=19960955
+mem_stacks_B=31560
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=565202814318
+mem_heap_B=467315194
+mem_heap_extra_B=20035942
+mem_stacks_B=33728
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=566492956927
+mem_heap_B=468312010
+mem_heap_extra_B=20067102
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=567783099530
+mem_heap_B=468851546
+mem_heap_extra_B=20095270
+mem_stacks_B=33784
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=569073242140
+mem_heap_B=469651989
+mem_heap_extra_B=20136803
+mem_stacks_B=38816
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=570363384741
+mem_heap_B=469719610
+mem_heap_extra_B=20145222
+mem_stacks_B=33784
+heap_tree=detailed
+n11: 469719610 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 141086720 0x49B65B9: pipelined_simd_unit::pipelined_simd_unit(register_set*, shader_core_config*, unsigned int, shader_core_ctx*, unsigned int) (shader.cc:2553)
+  n1: 70118400 0x49B6801: sfu::sfu(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2381)
+   n1: 70118400 0x49D1747: shader_core_ctx::create_exec_pipeline() (shader.cc:428)
+    n1: 70118400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 70118400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 70118400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 70118400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 70118400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 70118400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 70118400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 70118400 0x118250: main (main.cc:29)
+  n1: 45045760 0x49B6951: specialized_unit::specialized_unit(register_set*, shader_core_config*, shader_core_ctx*, int, char*, unsigned int, unsigned int) (shader.cc:2488)
+   n1: 45045760 0x49D1980: shader_core_ctx::create_exec_pipeline() (shader.cc:444)
+    n1: 45045760 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 45045760 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 45045760 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 45045760 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 45045760 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 45045760 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 45045760 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 45045760 0x118250: main (main.cc:29)
+  n1: 13598720 0x49B6871: tensor_core::tensor_core(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2389)
+   n1: 13598720 0x49D1817: shader_core_ctx::create_exec_pipeline() (shader.cc:434)
+    n1: 13598720 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 13598720 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 13598720 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 13598720 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 13598720 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 13598720 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 13598720 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 13598720 0x118250: main (main.cc:29)
+  n0: 12323840 in 4 places, all below massif's threshold (1.00%)
+ n3: 78643200 0x497EA69: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:195)
+  n1: 26214400 0x49BF73E: tex_cache (gpu-cache.h:1761)
+   n1: 26214400 0x49BF73E: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2624)
+    n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+     n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+      n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+       n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+        n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+         n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+          n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+           n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+            n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+             n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49BFA05: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49BFA05: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49BFA05: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2627)
+     n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+      n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49C74EA: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49C74EA: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49C74EA: shader_core_ctx::create_front_pipeline() (shader.cc:183)
+     n1: 26214400 0x11AB4C: trace_shader_core_ctx (trace_driven.h:198)
+      n1: 26214400 0x11AB4C: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+       n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+        n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+         n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+          n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+           n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+            n0: 26214400 0x118250: main (main.cc:29)
+ n1: 77550720 0x123CEC: allocate (new_allocator.h:114)
+  n1: 77550720 0x123CEC: allocate (alloc_traits.h:443)
+   n1: 77550720 0x123CEC: _M_allocate (stl_vector.h:343)
+    n1: 77550720 0x123CEC: std::vector<inst_trace_t, std::allocator<inst_trace_t> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 77550720 0x123051: resize (stl_vector.h:937)
+      n1: 77550720 0x123051: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:415)
+       n1: 77550720 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+        n1: 77550720 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+         n1: 77550720 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+          n1: 77550720 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+           n1: 77550720 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+            n1: 77550720 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+             n1: 77550720 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+              n1: 77550720 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+               n0: 77550720 0x118258: main (main.cc:30)
+ n0: 40402978 in 678 places, all below massif's threshold (1.00%)
+ n2: 37879808 0x497E9C9: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:198)
+  n1: 26738688 0x499B469: baseline_cache (gpu-cache.h:1291)
+   n1: 26738688 0x499B469: data_cache (gpu-cache.h:1520)
+    n1: 26738688 0x499B469: l2_cache (gpu-cache.h:1735)
+     n1: 26738688 0x499B469: memory_sub_partition::memory_sub_partition(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:441)
+      n1: 26738688 0x499BBCE: memory_partition_unit::memory_partition_unit(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:94)
+       n1: 26738688 0x499472B: gpgpu_sim::gpgpu_sim(gpgpu_sim_config&, gpgpu_context*) (gpu-sim.cc:1038)
+        n1: 26738688 0x124F62: trace_gpgpu_sim (trace_driven.h:168)
+         n1: 26738688 0x124F62: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 26738688 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 26738688 0x118250: main (main.cc:29)
+  n1: 11141120 0x49CF9CB: baseline_cache (gpu-cache.h:1291)
+   n1: 11141120 0x49CF9CB: data_cache (gpu-cache.h:1520)
+    n1: 11141120 0x49CF9CB: l1_cache (gpu-cache.h:1711)
+     n1: 11141120 0x49CF9CB: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2655)
+      n1: 11141120 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 11141120 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 11141120 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 11141120 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 11141120 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 11141120 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 11141120 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 11141120 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 11141120 0x118250: main (main.cc:29)
+ n1: 33639936 0x4927632: allocate (new_allocator.h:114)
+  n1: 33639936 0x4927632: allocate (alloc_traits.h:443)
+   n1: 33639936 0x4927632: _M_allocate (stl_vector.h:343)
+    n1: 33639936 0x4927632: _M_allocate_and_copy<__gnu_cxx::__normal_iterator<const warp_inst_t::per_thread_info*, std::vector<warp_inst_t::per_thread_info> > > (stl_vector.h:1508)
+     n3: 33639936 0x4927632: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::operator=(std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> > const&) (vector.tcc:226)
+      n1: 20835584 0x49A2BFB: operator= (abstract_hardware_model.h:1052)
+       n1: 20835584 0x49A2BFB: mem_fetch::mem_fetch(mem_access_t const&, warp_inst_t const*, unsigned long long, unsigned int, unsigned int, unsigned int, unsigned int, memory_config const*, unsigned long long, mem_fetch*, mem_fetch*) (mem_fetch.cc:48)
+        n1: 20835584 0x49B5D96: alloc (shader.h:2080)
+         n1: 20835584 0x49B5D96: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+          n1: 20835584 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+           n1: 20835584 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+            n1: 20835584 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+             n1: 20835584 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+              n1: 20835584 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+               n1: 20835584 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+                n1: 20835584 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+                 n1: 20835584 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                  n0: 20835584 0x118258: main (main.cc:30)
+      n1: 12579072 0x49C33C1: operator= (abstract_hardware_model.h:1052)
+       n1: 12579072 0x49C33C1: shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (shader.cc:1058)
+        n1: 12579072 0x11843C: trace_shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (trace_driven.cc:661)
+         n1: 12579072 0x49B9926: scheduler_unit::cycle() (shader.cc:1367)
+          n1: 12579072 0x49BA785: shader_core_ctx::issue() (shader.cc:1145)
+           n1: 12579072 0x49CEFD5: shader_core_ctx::cycle() (shader.cc:3687)
+            n1: 12579072 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+             n1: 12579072 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+              n1: 12579072 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+               n1: 12579072 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                n0: 12579072 0x118258: main (main.cc:30)
+      n0: 225280 in 1 place, below massif's threshold (1.00%)
+ n1: 31589976 0x121261: inst_trace_t::parse_from_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int) (trace_parser.cc:185)
+  n1: 31589976 0x122FC8: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:422)
+   n1: 31589976 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+    n1: 31589976 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+     n1: 31589976 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+      n1: 31589976 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+       n1: 31589976 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+        n1: 31589976 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+         n1: 31589976 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 31589976 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 31589976 0x118258: main (main.cc:30)
+ n1: 10092544 0x497E98D: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:192)
+  n0: 10092544 in 5 places, all below massif's threshold (1.00%)
+ n1: 6451456 0x11B5D5: allocate (new_allocator.h:114)
+  n1: 6451456 0x11B5D5: allocate (alloc_traits.h:443)
+   n1: 6451456 0x11B5D5: _M_allocate (stl_vector.h:343)
+    n1: 6451456 0x11B5D5: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 6451456 0x119D9E: resize (stl_vector.h:937)
+      n1: 6451456 0x119D9E: set_addr (abstract_hardware_model.h:1107)
+       n1: 6451456 0x119D9E: trace_warp_inst_t::parse_from_trace_struct(inst_trace_t const&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, OpcodeChar, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, OpcodeChar> > > const*, trace_config const*, kernel_trace_t const*) (trace_driven.cc:250)
+        n1: 6451456 0x11A6C9: get_next_trace_inst (trace_driven.cc:64)
+         n2: 6451456 0x11A6C9: trace_shd_warp_t::get_next_trace_inst() (trace_driven.cc:60)
+          n1: 5851648 0x49B48DA: decode (shader.cc:905)
+           n1: 5851648 0x49B48DA: shader_core_ctx::decode() (shader.cc:901)
+            n1: 5851648 0x49CEFFA: cycle (shader.cc:3689)
+             n1: 5851648 0x49CEFFA: shader_core_ctx::cycle() (shader.cc:3679)
+              n1: 5851648 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+               n1: 5851648 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+                n1: 5851648 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+                 n1: 5851648 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                  n0: 5851648 0x118258: main (main.cc:30)
+          n0: 599808 in 1 place, below massif's threshold (1.00%)
+ n1: 6392736 0x49B5D46: alloc (shader.h:2080)
+  n1: 6392736 0x49B5D46: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+   n1: 6392736 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+    n1: 6392736 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+     n1: 6392736 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+      n1: 6392736 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+       n1: 6392736 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+        n1: 6392736 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+         n1: 6392736 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 6392736 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 6392736 0x118258: main (main.cc:30)
+ n1: 5989536 0x11A46E: get_next_trace_inst (trace_driven.cc:63)
+  n1: 5989536 0x11A46E: trace_shd_warp_t::get_next_trace_inst() (trace_driven.cc:60)
+   n0: 5989536 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=571653527345
+mem_heap_B=470260821
+mem_heap_extra_B=20165763
+mem_stacks_B=31424
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=572943669975
+mem_heap_B=471242026
+mem_heap_extra_B=20202470
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=574233812584
+mem_heap_B=472436829
+mem_heap_extra_B=20232851
+mem_stacks_B=32576
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=575523955185
+mem_heap_B=473322034
+mem_heap_extra_B=20264910
+mem_stacks_B=33728
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=576814097790
+mem_heap_B=474817514
+mem_heap_extra_B=20306190
+mem_stacks_B=33816
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=578104240389
+mem_heap_B=475008122
+mem_heap_extra_B=20323118
+mem_stacks_B=32336
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=579394382988
+mem_heap_B=475134442
+mem_heap_extra_B=20335222
+mem_stacks_B=33752
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=580684525595
+mem_heap_B=475585522
+mem_heap_extra_B=20353798
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=581974668201
+mem_heap_B=475587138
+mem_heap_extra_B=20358486
+mem_stacks_B=33736
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=583264810805
+mem_heap_B=475999706
+mem_heap_extra_B=20375038
+mem_stacks_B=33736
+heap_tree=detailed
+n11: 475999706 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 141086720 0x49B65B9: pipelined_simd_unit::pipelined_simd_unit(register_set*, shader_core_config*, unsigned int, shader_core_ctx*, unsigned int) (shader.cc:2553)
+  n1: 70118400 0x49B6801: sfu::sfu(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2381)
+   n1: 70118400 0x49D1747: shader_core_ctx::create_exec_pipeline() (shader.cc:428)
+    n1: 70118400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 70118400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 70118400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 70118400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 70118400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 70118400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 70118400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 70118400 0x118250: main (main.cc:29)
+  n1: 45045760 0x49B6951: specialized_unit::specialized_unit(register_set*, shader_core_config*, shader_core_ctx*, int, char*, unsigned int, unsigned int) (shader.cc:2488)
+   n1: 45045760 0x49D1980: shader_core_ctx::create_exec_pipeline() (shader.cc:444)
+    n1: 45045760 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 45045760 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 45045760 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 45045760 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 45045760 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 45045760 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 45045760 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 45045760 0x118250: main (main.cc:29)
+  n1: 13598720 0x49B6871: tensor_core::tensor_core(register_set*, shader_core_config*, shader_core_ctx*, unsigned int) (shader.cc:2389)
+   n1: 13598720 0x49D1817: shader_core_ctx::create_exec_pipeline() (shader.cc:434)
+    n1: 13598720 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+     n1: 13598720 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+      n1: 13598720 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+       n1: 13598720 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+        n1: 13598720 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+         n1: 13598720 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 13598720 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 13598720 0x118250: main (main.cc:29)
+  n0: 12323840 in 4 places, all below massif's threshold (1.00%)
+ n3: 78643200 0x497EA69: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:195)
+  n1: 26214400 0x49BF73E: tex_cache (gpu-cache.h:1761)
+   n1: 26214400 0x49BF73E: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2624)
+    n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+     n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+      n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+       n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+        n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+         n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+          n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+           n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+            n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+             n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49BFA05: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49BFA05: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49BFA05: ldst_unit::init(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int) (shader.cc:2627)
+     n1: 26214400 0x49CF8D8: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2648)
+      n1: 26214400 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 26214400 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 26214400 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 26214400 0x118250: main (main.cc:29)
+  n1: 26214400 0x49C74EA: baseline_cache (gpu-cache.h:1291)
+   n1: 26214400 0x49C74EA: read_only_cache (gpu-cache.h:1494)
+    n1: 26214400 0x49C74EA: shader_core_ctx::create_front_pipeline() (shader.cc:183)
+     n1: 26214400 0x11AB4C: trace_shader_core_ctx (trace_driven.h:198)
+      n1: 26214400 0x11AB4C: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+       n1: 26214400 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+        n1: 26214400 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+         n1: 26214400 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+          n1: 26214400 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+           n1: 26214400 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+            n0: 26214400 0x118250: main (main.cc:29)
+ n1: 77550720 0x123CEC: allocate (new_allocator.h:114)
+  n1: 77550720 0x123CEC: allocate (alloc_traits.h:443)
+   n1: 77550720 0x123CEC: _M_allocate (stl_vector.h:343)
+    n1: 77550720 0x123CEC: std::vector<inst_trace_t, std::allocator<inst_trace_t> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 77550720 0x123051: resize (stl_vector.h:937)
+      n1: 77550720 0x123051: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:415)
+       n1: 77550720 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+        n1: 77550720 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+         n1: 77550720 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+          n1: 77550720 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+           n1: 77550720 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+            n1: 77550720 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+             n1: 77550720 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+              n1: 77550720 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+               n0: 77550720 0x118258: main (main.cc:30)
+ n0: 41272930 in 678 places, all below massif's threshold (1.00%)
+ n1: 38748160 0x4927632: allocate (new_allocator.h:114)
+  n1: 38748160 0x4927632: allocate (alloc_traits.h:443)
+   n1: 38748160 0x4927632: _M_allocate (stl_vector.h:343)
+    n1: 38748160 0x4927632: _M_allocate_and_copy<__gnu_cxx::__normal_iterator<const warp_inst_t::per_thread_info*, std::vector<warp_inst_t::per_thread_info> > > (stl_vector.h:1508)
+     n3: 38748160 0x4927632: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::operator=(std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> > const&) (vector.tcc:226)
+      n1: 25938176 0x49A2BFB: operator= (abstract_hardware_model.h:1052)
+       n1: 25938176 0x49A2BFB: mem_fetch::mem_fetch(mem_access_t const&, warp_inst_t const*, unsigned long long, unsigned int, unsigned int, unsigned int, unsigned int, memory_config const*, unsigned long long, mem_fetch*, mem_fetch*) (mem_fetch.cc:48)
+        n1: 25938176 0x49B5D96: alloc (shader.h:2080)
+         n1: 25938176 0x49B5D96: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+          n1: 25938176 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+           n1: 25938176 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+            n1: 25938176 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+             n1: 25938176 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+              n1: 25938176 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+               n1: 25938176 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+                n1: 25938176 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+                 n1: 25938176 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                  n0: 25938176 0x118258: main (main.cc:30)
+      n1: 12584704 0x49C33C1: operator= (abstract_hardware_model.h:1052)
+       n1: 12584704 0x49C33C1: shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (shader.cc:1058)
+        n1: 12584704 0x11843C: trace_shader_core_ctx::issue_warp(register_set&, warp_inst_t const*, std::bitset<32ul> const&, unsigned int, unsigned int) (trace_driven.cc:661)
+         n1: 12584704 0x49B9926: scheduler_unit::cycle() (shader.cc:1367)
+          n1: 12584704 0x49BA785: shader_core_ctx::issue() (shader.cc:1145)
+           n1: 12584704 0x49CEFD5: shader_core_ctx::cycle() (shader.cc:3687)
+            n1: 12584704 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+             n1: 12584704 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+              n1: 12584704 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+               n1: 12584704 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+                n0: 12584704 0x118258: main (main.cc:30)
+      n0: 225280 in 1 place, below massif's threshold (1.00%)
+ n2: 37879808 0x497E9C9: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:198)
+  n1: 26738688 0x499B469: baseline_cache (gpu-cache.h:1291)
+   n1: 26738688 0x499B469: data_cache (gpu-cache.h:1520)
+    n1: 26738688 0x499B469: l2_cache (gpu-cache.h:1735)
+     n1: 26738688 0x499B469: memory_sub_partition::memory_sub_partition(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:441)
+      n1: 26738688 0x499BBCE: memory_partition_unit::memory_partition_unit(unsigned int, memory_config const*, memory_stats_t*, gpgpu_sim*) (l2cache.cc:94)
+       n1: 26738688 0x499472B: gpgpu_sim::gpgpu_sim(gpgpu_sim_config&, gpgpu_context*) (gpu-sim.cc:1038)
+        n1: 26738688 0x124F62: trace_gpgpu_sim (trace_driven.h:168)
+         n1: 26738688 0x124F62: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+          n1: 26738688 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+           n0: 26738688 0x118250: main (main.cc:29)
+  n1: 11141120 0x49CF9CB: baseline_cache (gpu-cache.h:1291)
+   n1: 11141120 0x49CF9CB: data_cache (gpu-cache.h:1520)
+    n1: 11141120 0x49CF9CB: l1_cache (gpu-cache.h:1711)
+     n1: 11141120 0x49CF9CB: ldst_unit::ldst_unit(mem_fetch_interface*, shader_core_mem_fetch_allocator*, shader_core_ctx*, opndcoll_rfu_t*, Scoreboard*, shader_core_config*, memory_config const*, shader_core_stats*, unsigned int, unsigned int, gpgpu_sim*) (shader.cc:2655)
+      n1: 11141120 0x49D1A76: shader_core_ctx::create_exec_pipeline() (shader.cc:452)
+       n1: 11141120 0x11AB64: trace_shader_core_ctx (trace_driven.h:201)
+        n1: 11141120 0x11AB64: trace_simt_core_cluster::create_shader_core_ctx() (trace_driven.cc:520)
+         n1: 11141120 0x11AC75: trace_simt_core_cluster (trace_driven.h:183)
+          n1: 11141120 0x11AC75: trace_gpgpu_sim::createSIMTCluster() (trace_driven.cc:512)
+           n1: 11141120 0x124F79: trace_gpgpu_sim (trace_driven.h:169)
+            n1: 11141120 0x124F79: accel_sim_framework::gpgpu_trace_sim_init_perf_model(int, char const**, gpgpu_context*, trace_config*) (accel-sim.cc:221)
+             n1: 11141120 0x126631: accel_sim_framework::accel_sim_framework(int, char const**) (accel-sim.cc:30)
+              n0: 11141120 0x118250: main (main.cc:29)
+ n1: 31589976 0x121261: inst_trace_t::parse_from_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int) (trace_parser.cc:185)
+  n1: 31589976 0x122FC8: trace_parser::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >, unsigned int, unsigned int, PipeReader&) (trace_parser.cc:422)
+   n1: 31589976 0x118B03: trace_kernel_info_t::get_next_threadblock_traces(std::vector<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*, std::allocator<std::vector<inst_trace_t, std::allocator<inst_trace_t> >*> >) (trace_driven.cc:127)
+    n1: 31589976 0x11AE22: trace_shader_core_ctx::init_traces(unsigned int, unsigned int, kernel_info_t&) (trace_driven.cc:603)
+     n1: 31589976 0x499308C: shader_core_ctx::issue_block2core(kernel_info_t&) (gpu-sim.cc:1933)
+      n1: 31589976 0x49BCB92: simt_core_cluster::issue_block2core() (shader.cc:4589)
+       n1: 31589976 0x498D46C: gpgpu_sim::issue_block2core() (gpu-sim.cc:1984)
+        n1: 31589976 0x499245F: gpgpu_sim::cycle() (gpu-sim.cc:2159)
+         n1: 31589976 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 31589976 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 31589976 0x118258: main (main.cc:30)
+ n1: 10092544 0x497E98D: tag_array::tag_array(cache_config&, int, int) (gpu-cache.cc:192)
+  n0: 10092544 in 5 places, all below massif's threshold (1.00%)
+ n1: 7958304 0x49B5D46: alloc (shader.h:2080)
+  n1: 7958304 0x49B5D46: ldst_unit::process_memory_access_queue_l1cache(l1_cache*, warp_inst_t&) (shader.cc:2089)
+   n1: 7958304 0x49C99AB: ldst_unit::memory_cycle(warp_inst_t&, mem_stage_stall_type&, mem_stage_access_type&) (shader.cc:2329)
+    n1: 7958304 0x49CCC82: ldst_unit::cycle() (shader.cc:2927)
+     n1: 7958304 0x49B4EA3: shader_core_ctx::execute() (shader.cc:1826)
+      n1: 7958304 0x49CEFC5: shader_core_ctx::cycle() (shader.cc:3685)
+       n1: 7958304 0x49CF04F: simt_core_cluster::core_cycle() (shader.cc:4503)
+        n1: 7958304 0x49920D4: gpgpu_sim::cycle() (gpu-sim.cc:2115)
+         n1: 7958304 0x124354: accel_sim_framework::simulate() (accel-sim.cc:155)
+          n1: 7958304 0x1248BF: accel_sim_framework::simulation_loop() (accel-sim.cc:70)
+           n0: 7958304 0x118258: main (main.cc:30)
+ n1: 5900160 0x11A46E: get_next_trace_inst (trace_driven.cc:63)
+  n1: 5900160 0x11A46E: trace_shd_warp_t::get_next_trace_inst() (trace_driven.cc:60)
+   n0: 5900160 in 2 places, all below massif's threshold (1.00%)
+ n1: 5277184 0x11B5D5: allocate (new_allocator.h:114)
+  n1: 5277184 0x11B5D5: allocate (alloc_traits.h:443)
+   n1: 5277184 0x11B5D5: _M_allocate (stl_vector.h:343)
+    n1: 5277184 0x11B5D5: std::vector<warp_inst_t::per_thread_info, std::allocator<warp_inst_t::per_thread_info> >::_M_default_append(unsigned long) (vector.tcc:635)
+     n1: 5277184 0x119D9E: resize (stl_vector.h:937)
+      n1: 5277184 0x119D9E: set_addr (abstract_hardware_model.h:1107)
+       n1: 5277184 0x119D9E: trace_warp_inst_t::parse_from_trace_struct(inst_trace_t const&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, OpcodeChar, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, OpcodeChar> > > const*, trace_config const*, kernel_trace_t const*) (trace_driven.cc:250)
+        n1: 5277184 0x11A6C9: get_next_trace_inst (trace_driven.cc:64)
+         n1: 5277184 0x11A6C9: trace_shd_warp_t::get_next_trace_inst() (trace_driven.cc:60)
+          n0: 5277184 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=77
+#-----------
+time=584554953414
+mem_heap_B=475779765
+mem_heap_extra_B=20372979
+mem_stacks_B=31368
+heap_tree=empty
