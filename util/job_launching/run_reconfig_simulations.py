@@ -330,7 +330,7 @@ class ConfigurationSpec:
         """
         Get optimal phase size from CSV file based on benchmark name and arguments
         """
-        csv_path = os.path.join(this_directory, "optimal_phase_sizes.csv") 
+        csv_path = os.path.join(this_directory, "optimal_phase_sizes_config8.csv") 
         if not os.path.exists(csv_path):
             print(f"Warning: Could not find {csv_path}")
             return None

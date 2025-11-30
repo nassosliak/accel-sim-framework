@@ -311,9 +311,9 @@ rodinia-3.1:
     exec_dir: "$GPUAPPS_ROOT/bin/$CUDA_VERSION/release/"
     data_dirs: "$GPUAPPS_ROOT/data_dirs/cuda/rodinia/3.1/"
     execs:
-        - b+tree-rodinia-3.1:
-            - args:  file ./data/mil.txt command ./data/command.txt
-              accel-sim-mem: 40G
+        # - b+tree-rodinia-3.1:
+        #     - args:  file ./data/mil.txt command ./data/command.txt
+        #       accel-sim-mem: 40G
         - backprop-rodinia-3.1:
             - args:  65536
               accel-sim-mem: 1G
@@ -333,18 +333,18 @@ rodinia-3.1:
 # #            - args:  ./data/missile.domn.0.2M
 # #              accel-sim-mem: 4G
 # # ---------------------------------------------------------#
-#         # - dwt2d-rodinia-3.1:
-#         #     - args:  ./data/192.bmp -d 192x192 -f -5 -l 3
-#         #       accel-sim-mem: 1G
-#         #     - args:  ./data/rgb.bmp -d 1024x1024 -f -5 -l 3
-#         #       accel-sim-mem: 1G
+        # - dwt2d-rodinia-3.1:
+        #     - args:  ./data/192.bmp -d 192x192 -f -5 -l 3
+        #       accel-sim-mem: 1G
+        #     - args:  ./data/rgb.bmp -d 1024x1024 -f -5 -l 3
+        #       accel-sim-mem: 1G
         - gaussian-rodinia-3.1:
             - args:  -f ./data/matrix4.txt
               accel-sim-mem: 1G
             - args:  -s 16
               accel-sim-mem: 1G
-#             # - args:  -f ./data/matrix208.txt
-#             #   accel-sim-mem: 1G
+            # - args:  -f ./data/matrix208.txt
+            #   accel-sim-mem: 1G
             # - args:  -s 64
             #   accel-sim-mem: 1G
             # - args:  -s 256
